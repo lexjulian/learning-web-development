@@ -29,6 +29,11 @@ body {
   box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
 
   display: flex;
+
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+    margin: 2rem 1rem;
+  }
 }
 .product__photo-box {
   flex: 0 0 50%;

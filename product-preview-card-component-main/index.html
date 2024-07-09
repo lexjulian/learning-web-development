@@ -15,11 +15,17 @@
   <body>
     <div class="container">
       <div class="product__photo-box">
-        <img
-          src="./images/image-product-desktop.jpg"
-          alt="photo"
-          class="product__photo"
-        />
+        <picture>
+          <source
+            srcset="./images/image-product-mobile.jpg"
+            media="(max-width: 700px)"
+          />
+          <img
+            src="./images/image-product-desktop.jpg"
+            alt="photo"
+            class="product__photo"
+          />
+        </picture>
       </div>
       <div class="product__details-box">
         <h2 class="product__tag">Perfume</h2>
