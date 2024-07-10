@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  @media only screen and (max-width: 400px) {
+    font-size: 50%;
+  }
+}
+body {
+  font-family: "Figtree";
+  background-color: hsl(47, 88%, 63%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background-color: #fff;
+  max-width: 30rem;
+  padding: 2.5rem;
+  border-radius: 2rem;
+  box-shadow: 0.5rem 0.5rem 0 #000;
+}
+.photo-box {
+  height: 15rem;
+  width: 25rem;
+}
+.photo {
+  width: 100%;
+  border-radius: 1rem;
+}
+.tag {
+  font-size: 1.1rem;
+  background-color: hsl(47, 88%, 63%);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  display: inline-block;
+}
+.publish {
+  color: hsl(0, 0%, 50%);
+  margin-top: 1rem;
+}
+.title {
+  font-size: 2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.description {
+  color: hsl(0, 0%, 50%);
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  line-height: 1.5;
+}
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.author-photo {
+  height: 3rem;
+  width: 3rem;
+}
+.author-name {
+  font-weight: bold;
+}
