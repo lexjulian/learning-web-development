@@ -38,7 +38,7 @@ If you'd like to contribute to this repository or suggest improvements, please f
 ### License
 -
 
-Thank you for visiting my repository! Happy coding! :-) 8-)
+Thank you for visiting my repository! Happy coding! 
 ![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
 
