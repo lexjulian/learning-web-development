@@ -28,6 +28,11 @@ body {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
+
+  @media only screen and (max-width: 500px) {
+    margin: 2rem auto;
+    max-width: 30rem;
+  }
 }
 
 .order__photo {
