@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  background-color: #626cd6;
+  font-family: "Montserrat";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.login-form {
+  width: 100%;
+  max-width: 43rem;
+  background-color: #fff;
+  border-radius: 0.6rem;
+  padding: 4rem 3rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.login-title {
+  font-size: 2rem;
+  text-align: center;
+}
+.login-account {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.login-account-link {
+  width: calc(100% / 2 - 1.2rem);
+}
+.link {
+  height: 5.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  background: #f8f8fb;
+  border: 1px solid #dadaf2;
+  margin: 3.4rem 0 2.4rem 0;
+  text-decoration: none;
+  color: #171645;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+.link:hover {
+  background: #ededf5;
+  border-color: #626cd6;
+}
+.link img {
+  max-width: 2.5rem;
+}
+.login-form p {
+  text-align: center;
+  font-weight: 500;
+}
+.separator {
+  position: relative;
+  margin-bottom: 2.4rem;
+}
+.separator span {
+  background: #fff;
+  z-index: 1;
+  padding: 0 1rem;
+  position: relative;
+}
+.separator::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  height: 1px;
+  background: #c2c2c2;
+  display: block;
+}
+.input_box label {
+  display: block;
+  font-weight: 500;
+  font-size: 1.7rem;
+  margin-bottom: 0.8rem;
+}
+.input_box input {
+  width: 100%;
+  height: 5.7rem;
+  border: 1px solid #dadaf2;
+  border-radius: 0.5rem;
+  outline: none;
+  background: #f8f8fb;
+  font-size: 1.7rem;
+  padding: 0 2rem;
+  margin-bottom: 2.5rem;
+  transition: 0.2s ease;
+}
+.input_box input:focus {
+  border-color: #626cd6;
+}
+.password_title {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.input_box {
+  position: relative;
+}
+a {
+  text-decoration: none;
+  color: #626cd6;
+  font-weight: 500;
+}
+a:hover {
+  text-decoration: underline;
+}
+form button {
+  width: 100%;
+  height: 5.6rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  background: #626cd6;
+  color: #fff;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 2.8rem;
+  transition: 0.3s ease;
+}
+form button:hover {
+  background: #4954d0;
+}
