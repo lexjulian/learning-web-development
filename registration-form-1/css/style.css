@@ -1,0 +1,93 @@
+@import url("https://fonts.cdnfonts.com/css/verdana");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  background-color: #4070f4;
+  font-family: "Verdana", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  width: 100%;
+  max-width: 40rem;
+  padding: 2rem 2.5rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+
+  @media only screen and (max-width: 400px) {
+    max-width: 30rem;
+  }
+}
+h3 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+h3::after {
+  content: "";
+  position: absolute;
+  width: 9%;
+  top: 100%;
+  left: 0;
+  height: 3px;
+  background: #4070f4;
+}
+.register {
+  font-family: "Verdana", sans-serif;
+  width: 100%;
+  padding: 1rem;
+  display: block;
+  margin-bottom: 1.5rem;
+  border: 1px solid #dadada;
+  border-radius: 0.5rem;
+}
+.checkbox {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+button {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem;
+  background: #4070f4;
+  color: #fff;
+  border: none;
+  border-radius: 1rem;
+  transition: all 0.2s ease;
+}
+button:hover {
+  background: #6189f8;
+}
+p {
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+a {
+  font-weight: 600;
+  color: #4070f4;
+  text-decoration: none;
+}
+a:hover {
+  color: #6189f8;
+}
