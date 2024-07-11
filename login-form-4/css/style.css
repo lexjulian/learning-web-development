@@ -1,0 +1,139 @@
+@import url("https://fonts.cdnfonts.com/css/verdana");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Verdana", sans-serif;
+  background-color: #12323f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.container {
+  width: 100%;
+  max-width: 60rem;
+  background-color: #fff;
+  display: flex;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    max-width: 40rem;
+  }
+
+  @media only screen and (max-width: 400px) {
+    max-width: 30rem;
+  }
+}
+.photo_box {
+  flex: 0 0 50%;
+  padding: 0.5rem;
+  position: relative;
+}
+.photo {
+  width: 30rem;
+  height: 30rem;
+
+  @media only screen and (max-width: 600px) {
+    width: 39rem;
+    height: 29rem;
+  }
+
+  @media only screen and (max-width: 400px) {
+    width: 29rem;
+    height: 20rem;
+  }
+}
+.photo_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+h3 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+.login_box {
+  flex: 1;
+  padding: 2rem;
+  position: relative;
+}
+i {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #dadada;
+
+  @media only screen and (max-width: 600px) {
+    visibility: hidden;
+  }
+
+  @media only screen and (max-width: 400px) {
+    visibility: hidden;
+  }
+}
+.login {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 2rem;
+
+  @media only screen and (max-width: 600px) {
+    margin-top: -0.5rem;
+  }
+  @media only screen and (max-width: 600px) {
+    margin-top: -1rem;
+  }
+}
+.input_box {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.input {
+  font-family: "Verdana", sans-serif;
+  padding: 1rem;
+  border: 1px solid #dadada;
+}
+.input::placeholder {
+  color: #dadada;
+}
+a {
+  font-size: 1.2rem;
+  color: #00bcd5;
+}
+button {
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: bold;
+  background: #00bcd5;
+  width: 100%;
+  padding: 1rem;
+  display: block;
+  border: none;
+  margin-top: 2rem;
+  border-radius: 1rem;
+}
+.no-account {
+  text-align: center;
+}
