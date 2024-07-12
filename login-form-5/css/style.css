@@ -1,0 +1,107 @@
+@import url("https://fonts.cdnfonts.com/css/verdana");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Verdana", sans-serif;
+  background: linear-gradient(to right, #b245af, #ef429c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  width: 100%;
+  max-width: 40rem;
+  padding: 3rem 3rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+
+  @media only screen and (max-width: 500px) {
+    max-width: 30rem;
+    margin: 3rem 0;
+  }
+}
+.container h3 {
+  font-size: 2rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.container h3::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 6.5%;
+  height: 3px;
+  background: #b245af;
+}
+input {
+  font-size: 1.6rem;
+  font-family: "Verdana", sans-serif;
+  height: 4rem;
+  border: none;
+  border-bottom: 2px solid #b245af;
+  margin: 1rem 0;
+  transition: all 0.2s;
+}
+input:focus {
+  outline: none;
+  border-bottom: 3px solid #b245af;
+}
+button {
+  font-size: 1.6rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #b245af, #ef429c);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  transition: all 0.2s;
+}
+button:hover {
+  transform: translateY(-0.5rem);
+}
+p {
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+.btn * {
+  font-size: 1.4rem;
+  color: #fff;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-twitter {
+  background-color: #15bafc;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.btn-facebook {
+  background-color: #476ab8;
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+}
+
+.btn-effect:hover {
+  transform: translateY(-0.5rem);
+}
