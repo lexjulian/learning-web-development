@@ -23,13 +23,14 @@ a:hover {
 
 header {
   background: #0f1111;
-  width: 100vw;
-  height: 5rem;
 }
 .section_container {
   max-width: var(--site-width-large);
   margin: 0 auto;
 
+  @media only screen and (max-width: 1200px) {
+    max-width: var(--site-width-medium);
+  }
   @media only screen and (max-width: 1000px) {
     max-width: var(--site-width-medium);
   }
@@ -169,6 +170,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 .shop_item {
   background: #fff;
