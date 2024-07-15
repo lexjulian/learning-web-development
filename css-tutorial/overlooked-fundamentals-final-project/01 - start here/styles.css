@@ -1,0 +1,157 @@
+:root {
+  --clr-base-400: #5e5e5e;
+  --clr-base-500: #494949;
+
+  --clr-ui-300: #f8e2ff;
+  --clr-ui-400: #580d3a;
+  --clr-ux-300: #e2ffea;
+  --clr-ux-400: #115926;
+  --clr-dev-300: #e2fcff;
+  --clr-dev-400: #024f4f;
+
+  --ff-accent: "Podkova", serif;
+  --ff-base: "Open Sans", sans-serif;
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  --border-radius: 0.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-family: var(--ff-base);
+}
+.candidate {
+  padding: 1em;
+}
+.candidate .name {
+  color: var(--clr-base-500);
+  font-family: var(--ff-accent);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+.candidate img {
+  border-radius: 1rem;
+}
+.roles {
+  margin: 0;
+
+  line-height: 1;
+}
+.role {
+  font-weight: 700;
+  padding: 0 0.5em;
+  border-radius: 1em;
+  margin-right: 0.5em;
+}
+.ui {
+  color: var(--clr-ui-400);
+  background: var(--clr-ui-300);
+}
+.ux {
+  color: var(--clr-ux-400);
+  background: var(--clr-ux-300);
+}
+.dev {
+  color: var(--clr-dev-400);
+  background: var(--clr-dev-300);
+}
+.bio {
+  color: var(--clr-base-400);
+  margin: 0;
+}
+.social {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+}
+.social a:hover,
+.social a:focus {
+  opacity: 0.5;
+}
+.btn {
+  display: inline-block;
+  color: #fff;
+  background-color: #7e47c5;
+  padding: 0.5em 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+}
+.candidate .btn {
+  align-self: end;
+  justify-self: end;
+}
+/* /////////////////
+   Layout related
+   no need to touch any of this
+//////////////////*/
+
+.candidates {
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 2em;
+  display: grid;
+  gap: 2em;
+}
+
+.candidate {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-areas:
+    "img social"
+    "name name"
+    "role role"
+    "bio bio"
+    "button button";
+  gap: 0.5em;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+}
+
+@media (min-width: 500px) {
+  .candidate {
+    grid-template-columns: min-content minmax(15rem, 22.5rem);
+    grid-template-areas:
+      "img name"
+      "img role"
+      "img bio"
+      "social button";
+  }
+}
+
+@media (min-width: 960px) {
+  .candidates {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.candidate img {
+  grid-area: img;
+}
+.candidate .name {
+  grid-area: name;
+}
+.candidate .roles {
+  grid-area: role;
+}
+.candidate .bio {
+  grid-area: bio;
+}
+.candidate .social {
+  grid-area: social;
+}
+.candidate .btn {
+  grid-area: button;
+}
