@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "PT Sans", sans-serif;
+}
+body {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.hero {
+  background-image: url("/images/hero.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+h1 {
+  font-weight: 400;
+}
+.container {
+  max-width: 50rem;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 2em 3em;
+  text-align: center;
+}
+
+.container-description {
+  margin: 2em 0;
+}
+
+.btn {
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1em 3em;
+  background: linear-gradient(to right, #6aa84f, #8fce00);
+}
+.btn:hover {
+  opacity: 0.8;
+}
