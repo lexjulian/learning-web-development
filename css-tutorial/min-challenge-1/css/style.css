@@ -1,19 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+/* reset */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
-
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+/* utilities */
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+/* general styling */
 html {
   font-family: "PT Sans", sans-serif;
 }
 body {
   font-size: 1.25rem;
   font-weight: 400;
+  margin: 0;
 }
 .hero {
   background-image: url("/images/hero.jpg");
@@ -37,12 +47,9 @@ h1 {
   text-align: center;
 }
 
-.container-description {
-  margin: 2em 0;
-}
-
 .btn {
   color: #000;
+  display: inline-block;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-decoration: none;
