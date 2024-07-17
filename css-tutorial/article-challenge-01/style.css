@@ -342,6 +342,39 @@ section {
   background: transparent;
   border: 0;
 }
+.article-preview {
+  position: relative;
+  z-index: 1;
+}
+.article-preview a {
+  display: block;
+  text-decoration: none;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-300);
+}
+
+.article-preview a:hover,
+.article-preview a:focus {
+  color: inherit;
+}
+
+.article-preview:hover a::before {
+  --offset: -1em;
+  content: "";
+  position: absolute;
+  top: var(--offset);
+  bottom: var(--offset);
+  left: var(--offset);
+  right: var(--offset);
+  z-index: -1;
+  border-radius: var(--br);
+  box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.2);
+  opacity: 0;
+}
+
+.article-preview:hover a::before {
+  opacity: 1;
+}
 
 .article-preview h3 {
   font-size: var(--fs-500);
