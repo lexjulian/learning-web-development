@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo {
+  max-width: 165px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+header {
+  background: #f2e1d9;
+}
+nav {
+  padding: 1em;
+  background: #4c4c4c;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1em;
+}
+
+#menu {
+  display: none;
+}
+
+.menu-bar {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0.3em;
+  color: #fff;
+  background-color: #000;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  align-self: flex-end;
+}
+
+.menu-bar svg {
+  fill: #fff;
+}
+
+.menu-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.links li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.2em;
+  border-radius: 0.5rem;
+}
+
+.links li a:hover {
+  color: #4c4c4c;
+  background: #dadada;
+}
+
+.links-container {
+  display: none;
+  transition: 5s ease-out;
+}
+
+#menu:checked ~ .links-container {
+  display: block;
+}
+
+.navbar__outer {
+  display: none;
+}
+
+@media (min-width: 40em) {
+  .menu-bar {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+  }
+
+  nav {
+    padding: 1em;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 3em;
+  }
+
+  .links-container {
+    display: block;
+  }
+
+  .links-container .links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .links-container .links a {
+    color: #000;
+  }
+
+  .links-container .links a:hover {
+    color: #ff8d5f;
+    background: none;
+  }
+
+  .navbar__outer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navbar__outer .search input {
+    border: none;
+    background: #f2e1d9;
+    width: 70%;
+  }
+
+  .navbar__outer .search input:focus {
+    outline: none;
+  }
+
+  .navbar__outer .search i {
+    font-size: 25px;
+  }
+
+  .navbar__outer a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .bag {
+    display: flex;
+  }
+}
