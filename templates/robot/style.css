@@ -49,6 +49,15 @@ header {
   padding: 1em 1em 0 1em;
 }
 
+header .container {
+  background: #111111;
+}
+
+section,
+footer {
+  background: #ebebeb;
+}
+
 .products {
   display: flex;
   justify-content: flex-end;
@@ -175,6 +184,94 @@ nav {
   text-transform: uppercase;
 }
 
+/* factory */
+
+.robot-factory {
+  padding: 0 1em;
+}
+
+.factory-container {
+  padding: 7em 0;
+  text-align: center;
+}
+
+.factory-container h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
+
+.normal {
+  color: #bfbfbf;
+}
+
+.factory-container button {
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  background: #fabe12;
+  color: #fff;
+  padding: 0.3em 1em;
+  margin: 2em 0 3em 0;
+  cursor: pointer;
+}
+
+.factory-container button:hover {
+  outline: 1px solid #fabe12;
+  background: #fff;
+  color: #fabe12;
+}
+
+.factory-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.factory-box-item {
+  position: relative;
+}
+
+.product-label {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  background: #fabe12;
+  color: #fff;
+  padding: 0.5em 3em;
+  position: absolute;
+  top: 5%;
+  left: 12%;
+}
+
+/* description */
+.description-tag {
+  display: inline-block;
+  width: 240px;
+  background: #fabe12;
+  padding: 0.7em 1em;
+  clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.description-tag h2 {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 300;
+}
+
+.description-title h3 {
+  font-size: 1.5rem;
+  color: #bfbfbf;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.5em 1em;
+}
+
 /* media queries */
 
 @media (min-width: 40em) {
@@ -182,6 +279,7 @@ nav {
     max-width: 70rem;
     margin: 0 auto;
     padding: 0;
+    background: #fff;
   }
 
   /* header */
@@ -220,10 +318,19 @@ nav {
   /* hero */
 
   .hero {
-    background: linear-gradient(#111111 90%, #fff 20%);
+    background: linear-gradient(#111111 90%, #ebebeb 20%);
   }
 
   .hero-container .hero-text {
     transform: translateX(20rem);
+  }
+
+  /* factory */
+  .robot-factory .container {
+    background: #fff;
+  }
+
+  .factory-box {
+    flex-direction: row;
   }
 }
