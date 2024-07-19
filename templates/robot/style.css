@@ -43,3 +43,134 @@ body {
   line-height: 1.3;
   font-family: "Oswald", sans-serif;
 }
+
+header {
+  background: #111111;
+}
+
+.container {
+  padding: 1em;
+}
+
+.products {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.2em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.search {
+  display: flex;
+  margin-top: 0.5em;
+}
+
+.search input {
+  flex-basis: 80%;
+  background: #111111;
+  border: 1px solid #dadada;
+}
+
+.search button {
+  border: none;
+
+  color: #fff;
+  background: #fabe12;
+  text-transform: uppercase;
+  padding: 0.3em 1.5em;
+}
+
+#menu {
+  display: none;
+}
+
+nav {
+  border-top: 1px solid #262626;
+  border-bottom: 1px solid #262626;
+  padding: 0.1em 0;
+}
+.menu-bar {
+  margin-left: auto;
+  color: #dadada;
+  font-size: 2rem;
+  text-align: right;
+}
+
+.menu-bar i {
+  border: 1px solid #dadada;
+  border-radius: 3px;
+}
+
+.links {
+  display: none;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.links li:first-child a {
+  color: #fabe12;
+}
+
+.links a {
+  display: inline-block;
+  text-decoration: none;
+  color: #bfbfbf;
+}
+
+.links a:hover {
+  color: #fff;
+}
+
+.links a:last-child {
+  margin-bottom: 1em;
+}
+
+#menu:checked ~ .links {
+  display: initial;
+}
+
+@media (min-width: 40em) {
+  .container {
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+
+  .container-box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  nav {
+    border: 1px solid #262626;
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+
+  .menu-bar {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .links {
+    display: initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 1.6rem;
+  }
+}
+
+/* hero */
+
+.hero {
+  background-image: url(./img/header.jpg);
+  background-size: cover;
+}
+
+.hero-container h2 {
+  color: #fabe12;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
