@@ -58,6 +58,10 @@ footer {
   background: #ebebeb;
 }
 
+.flow-content > * + * {
+  margin-top: 1em;
+}
+
 .products {
   display: flex;
   justify-content: flex-end;
@@ -272,6 +276,16 @@ nav {
   padding: 0.5em 1em;
 }
 
+.description-info {
+  letter-spacing: 0.1em;
+  color: #bfbfbf;
+  padding: 0.5em 1em;
+}
+
+.bold {
+  color: #a7a7a7;
+}
+
 /* media queries */
 
 @media (min-width: 40em) {
@@ -332,5 +346,26 @@ nav {
 
   .factory-box {
     flex-direction: row;
+  }
+
+  /* description */
+
+  .description-title h3 {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .description-info {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 65rem;
+    gap: 1.5em;
+    margin-top: 1em;
+  }
+
+  .flow-content > * + * {
+    margin-top: 0;
   }
 }
