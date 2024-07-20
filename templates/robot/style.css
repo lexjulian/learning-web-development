@@ -20,12 +20,6 @@ p {
   margin: 0;
 }
 
-ul[class],
-ol[class] {
-  list-style: none;
-  padding: 0;
-}
-
 input,
 button,
 textarea,
@@ -253,6 +247,9 @@ nav {
 }
 
 /* description */
+.description .container {
+  padding: 0 0 1em 0;
+}
 .description-tag {
   display: inline-block;
   width: 240px;
@@ -284,6 +281,105 @@ nav {
 
 .bold {
   color: #a7a7a7;
+}
+
+/* history */
+.history .container {
+  padding: 7em 1em 0 1em;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.history-container p:first-child {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.history-container h2 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-top: 0.1em;
+  color: #fabe12;
+}
+
+.history-container .history-description {
+  margin-top: 4em;
+  font-weight: 200;
+}
+
+.history-container img {
+  margin-top: 3em;
+}
+
+/* media */
+.media .container {
+  padding: 7em 1em 3em 1em;
+  text-align: center;
+}
+
+.media-container p {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.media-container h2 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin-bottom: 2em;
+}
+
+.media-container .media-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.media-container i {
+  font-size: 4rem;
+  color: #dadada;
+}
+
+/* footer */
+footer .container {
+  padding: 3em 1em;
+  background: #ebebeb;
+}
+
+.footer-container {
+  color: #999999;
+}
+
+.footer-item h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  padding: 0.7em 0;
+  border-bottom: 1px solid #dadada;
+}
+
+.footer-links {
+  list-style: circle;
+}
+
+.footer-item .footer-links a:link,
+.footer-item .footer-links a:visited {
+  color: #999999;
+  text-decoration: none;
+}
+
+.footer-item .footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-item .footer-image {
+  display: flex;
+  gap: 0.2em;
+}
+
+.footer-item .footer-image img {
+  width: 50%;
 }
 
 /* media queries */
@@ -367,5 +463,35 @@ nav {
 
   .flow-content > * + * {
     margin-top: 0;
+  }
+
+  /* media */
+  .media-container .media-gallery {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* footer */
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+  }
+
+  .footer-item {
+    flex-basis: 100%;
+  }
+
+  .spacer {
+    margin-top: 1em;
+  }
+
+  .footer-links li {
+    margin-top: 1em;
+  }
+
+  .footer-item .footer-image img {
+    width: 40%;
   }
 }
