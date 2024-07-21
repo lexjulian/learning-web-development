@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.1;
+  color: hsl(229, 6%, 66%);
+}
+
+.header-container {
+  padding: 5em 1em;
+  text-align: center;
+}
+
+.header-container .title {
+  font-weight: 300;
+}
+
+.header-container .description {
+  font-weight: 600;
+  color: #000;
+}
+
+/* hero */
+.hero-container {
+  padding: 0 1em 3em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.hero-container .card {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+  border-top: 7px solid var(--fg, red);
+}
+
+.hero-container .card h3 {
+  color: #000;
+}
+
+.hero-container .card img {
+  align-self: flex-end;
+  margin-top: 1.5em;
+}
+
+.hero-container .card-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.cyan {
+  --fg: hsl(180, 62%, 55%);
+}
+
+.red {
+  --fg: hsl(0, 78%, 62%);
+}
+
+.orange {
+  --fg: hsl(34, 97%, 64%);
+}
+
+.blue {
+  --fg: hsl(212, 86%, 64%);
+}
+
+/* media queries */
+@media (min-width: 40em) {
+  .hero-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .card {
+    flex-basis: 100%;
+  }
+
+  .card-2 {
+    flex-basis: 100%;
+  }
+}
