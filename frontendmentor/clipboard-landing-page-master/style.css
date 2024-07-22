@@ -19,6 +19,273 @@ ol {
   list-style: none;
 }
 
+input,
+button {
+  font-family: inherit;
+}
+
 body {
   font-family: "Bai Jamjuree", sans-serif;
+}
+
+section {
+  text-align: center;
+  padding: 0 2em;
+  padding-top: 7em;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  color: #a7a7a7;
+}
+
+/* hero */
+.hero {
+  background-image: url(./images/bg-header-mobile.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-container img {
+  margin: 0 auto;
+}
+
+.hero-container h2 {
+  margin-top: 2em;
+}
+
+.hero-container p {
+  margin-top: 1.5em;
+}
+
+.buttons-container {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.buttons-container button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 1em 4em;
+  border-radius: 2rem;
+  border: none;
+  color: #fff;
+  background: var(--fg, red);
+  border-bottom: 3px solid var(--bg, red);
+}
+
+.buttons-container button:hover {
+  opacity: 0.7;
+}
+
+.green {
+  --fg: hsl(171, 66%, 44%);
+  --bg: hsl(201, 11%, 66%);
+}
+
+.blue {
+  --fg: hsl(233, 100%, 69%);
+  --bg: hsl(210, 10%, 33%);
+}
+
+/* hero2 */
+.hero-2-container p {
+  margin-top: 2em;
+}
+
+/* hero-3 */
+.hero-3 {
+  padding-top: 4em;
+}
+
+.hero-3-container .box-container {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.hero-3-container .box-container .box-info p {
+  margin-top: 1em;
+}
+
+/* hero4 */
+.hero-4-container p {
+  margin-top: 2em;
+}
+
+.hero-4-container img {
+  margin-top: 4em;
+}
+
+/* hero5 */
+.hero-5-container p {
+  margin-top: 1em;
+}
+
+.hero-5-container .card-container {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.hero-5-container .card-container .card .card-icon {
+  fill: #a7a7a7;
+  height: 3rem;
+  margin-bottom: 2em;
+}
+
+.hero-5-container .company-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+  margin-top: 5em;
+  align-items: center;
+}
+
+.hero-5-container .company-container img {
+  width: 50%;
+}
+
+/* clipboard */
+.clipboard {
+  padding-bottom: 5em;
+}
+
+.clipboard-container p {
+  margin-top: 2em;
+}
+
+/* footer */
+footer {
+  padding: 5em 2em;
+  background: #f3f6f4;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-container .logo {
+  height: 5rem;
+  margin-bottom: 2em;
+}
+
+.footer-container .footer-links {
+  margin-top: 2em;
+}
+
+.footer-container .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.footer-container .links a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer-container .links a:hover {
+  opacity: 0.5;
+}
+
+.footer-container .social {
+  margin-top: 3em;
+  display: flex;
+  gap: 2em;
+}
+
+/* media queries */
+@media (min-width: 40em) {
+  section {
+    padding-top: 10em;
+  }
+
+  .container {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  /* hero */
+  .hero {
+    background-image: url(./images/bg-header-desktop.png);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero-container h2 {
+    font-size: 2.5rem;
+  }
+
+  .buttons-container {
+    margin-top: 4em;
+    display: inline-block;
+  }
+
+  /* hero3 */
+  .hero-3-container {
+    display: flex;
+    align-items: center;
+    gap: 5em;
+  }
+
+  .hero-3-container img {
+    transform: translateX(-5rem);
+  }
+
+  .hero-3-container .box-container {
+    text-align: left;
+    flex-basis: 30%;
+  }
+
+  /* hero5 */
+  .hero-5-container .card-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .hero-5-container .company-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /* footer */
+  footer {
+    padding: 2em;
+  }
+
+  .footer-container {
+    max-width: 70rem;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5em;
+  }
+
+  .footer-container .links {
+    margin-top: 0;
+    align-items: flex-start;
+  }
+
+  .footer-container .social {
+    margin-top: 0;
+    margin-left: auto;
+  }
 }
