@@ -1,2 +1,5 @@
-console.log("Hello World");
-console.log("My name is Alex");
+function sayName(name) {
+  console.log("My name is " + name);
+}
+
+sayName("Alex");
