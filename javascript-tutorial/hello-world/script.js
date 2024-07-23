@@ -1,5 +1,3 @@
-function sayName(name) {
-  console.log("My name is " + name);
-}
+let printHi = (name) => "Hi " + name;
 
-sayName("Alex");
+console.log(printHi("Alex"));
