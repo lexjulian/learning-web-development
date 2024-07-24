@@ -1,9 +1,14 @@
-const divWithId = document.getElementById("div-id");
+const btn = document.querySelector("[data-btn]");
+const input = document.querySelector("[data-input-text]");
+const form = document.querySelector("[data-form]");
+const link = document.querySelector("a");
 
-divWithId.style.color = "red";
+link.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("Clicked link");
+});
 
-const divWithClass = document.getElementsByClassName("div-class");
-
-const divWithClassArray = Array.from(divWithClass);
-
-divWithClassArray.forEach((div) => (div.style.color = "green"));
+form.addEventListener("submit", (e) => {
+  e.preventDefault;
+  console.log("Submitted form");
+});
