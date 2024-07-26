@@ -1,10 +1,17 @@
-const grandParent = document.querySelector("#grand-parent");
+const person = {
+  name: "Alex",
+  friend: {
+    name: "Joe",
+    friend: {
+      name: "Sally",
+    },
+  },
+};
 
-const children = grandParent.querySelectorAll(".child");
-const parent = grandParent.querySelector(".red");
+function printNames(currentPerson) {
+  if (currentPerson == null) return;
+  console.log(currentPerson.name);
+  printNames(currentPerson.friend);
+}
 
-parent.style.color = "green";
-
-children.forEach((child) => {
-  child.style.color = "red";
-});
+printNames(person);
