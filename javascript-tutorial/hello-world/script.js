@@ -1,7 +1,4 @@
-const buttons = document.querySelectorAll("button");
+localStorage.setItem("Name", "Alex");
+localStorage.removeItem("Name");
 
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    console.log("Clicked button");
-  });
-});
+console.log(localStorage.getItem("Name"));
