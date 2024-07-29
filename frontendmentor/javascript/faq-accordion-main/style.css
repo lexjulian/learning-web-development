@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+section {
+  background-image: url("./assets/images/background-pattern-mobile.svg");
+  background-size: cover;
+  background-position: center;
+  padding: 5em 1em;
+  height: 20vh;
+}
+
+.dummy {
+  height: 100vh;
+  background: hsl(275, 100%, 97%);
+}
+
+.container {
+  background: #fff;
+  max-width: 40rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  position: relative;
+  z-index: 1;
+  padding: 2em 2em;
+}
+
+.container-header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.container-main {
+  margin-top: 2em;
+}
+
+.flow-content > * + * {
+  margin-top: 1em;
+}
+
+.container-card:not(:last-child) {
+  padding-bottom: 1em;
+  border-bottom: 1px solid #dadada;
+}
+
+.container-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-answer p {
+  color: #a7a7a7;
+}
+
+.invisible {
+  display: none;
+}
+
+@media (min-width: 40em) {
+  section {
+    padding: 10em 0;
+    height: 10vh;
+  }
+}
