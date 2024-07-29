@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.invisible {
+  display: none;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  background: #000;
+  color: #a7a7a7;
+}
+
+button {
+  font-family: inherit;
+}
+
+section {
+  padding: 10em 2em;
+}
+
+.container {
+  background: hsl(213, 19%, 18%);
+  max-width: 25rem;
+  margin: 0 auto;
+  padding: 2em 1em;
+  border-radius: 1rem;
+}
+
+.container-thankyou {
+  text-align: center;
+}
+
+.container-thankyou .container-p {
+  color: #fcab71;
+  background: #3a424b;
+  border-radius: 2rem;
+  padding: 0.5em 2em;
+  display: inline-block;
+}
+
+.container-thankyou h3 {
+  color: #fff;
+}
+
+.flow-content > * + * {
+  margin-top: 1.5em;
+}
+
+.container-icon img {
+  background: #3a424b;
+  padding: 0.5em;
+  border-radius: 100%;
+}
+
+.container-text h2 {
+  color: #fff;
+  margin-bottom: 1em;
+}
+
+.container-rating {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-rating .btn-container .btn {
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: none;
+  background: #3a424b;
+  color: #dadada;
+  transition: all 0.2s;
+}
+
+.container-rating .btn-container .btn:hover {
+  background: hsl(217, 12%, 63%);
+  color: #000;
+}
+
+.container-rating .btn-container .btn:active,
+.container-rating .btn-container .btn:focus {
+  background: hsl(25, 97%, 53%);
+  color: #3a424b;
+}
+
+.submit {
+  text-align: center;
+  display: block;
+  background: hsl(25, 97%, 53%);
+  width: 100%;
+  padding: 1em 5em;
+  border: none;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submit:hover,
+.submit:focus,
+.submit:active {
+  background: #fff;
+}
+
+@media (min-width: 40em) {
+  .container-rating {
+    justify-content: space-between;
+  }
+
+  .container-rating .btn-container .btn {
+    height: 50px;
+    width: 50px;
+  }
+}
