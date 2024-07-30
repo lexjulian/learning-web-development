@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  background: #e6e9ff;
+  max-width: 40rem;
+  padding: 1em;
+  border: 10px solid #000;
+  border-radius: 2rem;
+}
+
+.container-time {
+  display: flex;
+  justify-content: center;
+  flex-basis: 100%;
+}
+
+.container-time h2 {
+  font-size: 7rem;
+}
+
+.container-button {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.container-button button {
+  padding: 1em 2em;
+  border-radius: 1rem;
+  border: none;
+  background: var(--fg, #63c019);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.container-button button:hover,
+.container-button button:focus,
+.container-button button:active {
+  opacity: 0.8;
+}
+
+.list {
+  list-style: none;
+  margin-top: 3em;
+}
+
+.list li {
+  font-size: 2rem;
+}
+
+.hide {
+  display: none;
+}
+
+.red {
+  --fg: red;
+}
+
+.blue {
+  --fg: blue;
+}
