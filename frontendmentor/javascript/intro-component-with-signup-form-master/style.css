@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+.invisible {
+  display: none;
+}
+
+section {
+  background-color: #ff7976;
+  background-image: url(./images/bg-intro-mobile.png);
+  background-repeat: repeat;
+  background-blend-mode: multiply;
+}
+
+.container {
+  text-align: center;
+  padding: 5em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.container-left {
+  color: #fff;
+}
+
+.container-left h2 {
+  padding: 1em;
+}
+
+.container-free {
+  color: #fff;
+  padding: 1em 5em;
+  background: hsl(248, 32%, 49%);
+  border-radius: 1rem;
+}
+
+.container-form {
+  margin-top: 1.5em;
+  background: #fff;
+  padding: 1em;
+  border-radius: 1rem;
+}
+
+.flow-content > * + * {
+  margin-top: 1em;
+}
+
+.container-form .container-input .input-main {
+  position: relative;
+}
+
+.container-form .container-input .input-main input {
+  display: block;
+  width: 100%;
+  padding: 1em;
+  border-radius: 0.5rem;
+  border: 1px solid #dadada;
+}
+
+.container-form .container-input .input-main input::placeholder {
+  color: #666362;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.container-form .container-input .input-main img {
+  position: absolute;
+  top: 20%;
+  left: 90%;
+}
+
+.container-form .container-input .input-sub p {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9rem;
+  color: #ff7976;
+}
+
+.container-form .btn {
+  display: block;
+  width: 100%;
+  padding: 1em;
+  background: hsl(154, 59%, 51%);
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+}
+
+.container-form p {
+  color: #a7a7a7;
+  font-size: 0.7rem;
+  padding: 1em;
+}
+
+.container-form .terms {
+  color: #ff7976;
+  font-weight: bold;
+}
+
+@media (min-width: 40em) {
+  section {
+    background-image: url(./images/bg-intro-desktop.png);
+    height: 100vh;
+  }
+  .container {
+    flex-direction: row;
+    max-width: 70rem;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .container-left {
+    flex-basis: 40%;
+    text-align: left;
+  }
+
+  .container-left h2 {
+    padding: 0 1em 0 0;
+    margin-bottom: 1em;
+    font-size: 2rem;
+  }
+}
