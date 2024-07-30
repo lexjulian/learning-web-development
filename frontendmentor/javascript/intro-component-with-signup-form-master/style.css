@@ -68,6 +68,7 @@ section {
 
 .container-form .container-input .input-main input {
   display: block;
+  font-size: 1rem;
   width: 100%;
   padding: 1em;
   border-radius: 0.5rem;
@@ -86,11 +87,12 @@ section {
   left: 90%;
 }
 
-.container-form .container-input .input-sub p {
-  display: flex;
-  justify-content: flex-end;
+.container-form .container-input .input-main p {
+  text-align: right;
   font-size: 0.9rem;
   color: #ff7976;
+  margin: 0;
+  padding: 0;
 }
 
 .container-form .btn {
@@ -105,6 +107,10 @@ section {
   border-radius: 0.5rem;
 }
 
+.container-form .btn:hover {
+  opacity: 0.8;
+}
+
 .container-form p {
   color: #a7a7a7;
   font-size: 0.7rem;
@@ -114,6 +120,10 @@ section {
 .container-form .terms {
   color: #ff7976;
   font-weight: bold;
+}
+
+.text-light {
+  color: #dadada;
 }
 
 @media (min-width: 40em) {

@@ -14,6 +14,7 @@
 
     <title>Frontend Mentor | Intro component with sign up form</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body>
@@ -29,10 +30,13 @@
         </div>
         <div class="container-right">
           <div class="container-free">
-            <p>Try it free 7 days then $20/mo. thereafter</p>
+            <p>
+              Try it free 7 days
+              <span class="text-light">then $20/mo. thereafter</span>
+            </p>
           </div>
           <div class="container-form">
-            <form action="#" class="flow-content">
+            <form action="#" class="flow-content" id="form">
               <div class="container-input">
                 <div class="input-main">
                   <input type="text" id="fname" placeholder="First Name" />
@@ -41,9 +45,7 @@
                     src="./images/icon-error.svg"
                     alt="error"
                   />
-                </div>
-                <div class="input-sub invisible">
-                  <p>First name should not be empty</p>
+                  <p class="invisible">First name should not be empty</p>
                 </div>
               </div>
               <div class="container-input">
@@ -54,9 +56,7 @@
                     src="./images/icon-error.svg"
                     alt="error"
                   />
-                </div>
-                <div class="input-sub invisible">
-                  <p>First name should not be empty</p>
+                  <p class="invisible">Last name should not be empty</p>
                 </div>
               </div>
 
@@ -68,9 +68,7 @@
                     src="./images/icon-error.svg"
                     alt="error"
                   />
-                </div>
-                <div class="input-sub invisible">
-                  <p>First name should not be empty</p>
+                  <p class="invisible">Email address should not be empty</p>
                 </div>
               </div>
               <div class="container-input">
@@ -81,9 +79,7 @@
                     src="./images/icon-error.svg"
                     alt="error"
                   />
-                </div>
-                <div class="input-sub invisible">
-                  <p>First name should not be empty</p>
+                  <p class="invisible">Password should not be empty</p>
                 </div>
               </div>
 
