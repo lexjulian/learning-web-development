@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Todo App</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="todo flow-content">
+          <h2>Todo App</h2>
+          <input type="text" id="input" />
+          <button id="add">Add</button>
+        </div>
+        <ul class="list hide"></ul>
+        <template id="template">
+          <li class="list-item">
+            <span class="list-item-text"></span>
+            <button class="delete">Delete</button>
+          </li>
+        </template>
+      </div>
+    </section>
+  </body>
+</html>
