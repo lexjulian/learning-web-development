@@ -1,92 +1,95 @@
 const show = document.querySelector("#show");
 const addContainer = document.querySelector("#add-container");
-const cardsContainer = document.querySelector("#cards-container");
+const hide = document.querySelector("#hide");
 const addCard = document.querySelector("#add-card");
 const question = document.querySelector("#question");
 const answer = document.querySelector("#answer");
-const current = document.querySelector("#current");
-const prev = document.querySelector("#prev");
+const cardsContainer = document.querySelector("#cards-container");
 const next = document.querySelector("#next");
+const prev = document.querySelector("#prev");
+const current = document.querySelector("#current");
 const clear = document.querySelector("#clear");
-const STORAGE_KEY = "MEMORYGAME-cards";
+const STORAGE_KEY = "MEMORY_CARDS";
 
-let arrCards = loadStorage();
-arrCards.forEach(generateCard);
+let newCardArray = loadStorage();
+let currentIndex = 0;
 let num = 0;
-if (arrCards.length > 0) {
-  generateCard(arrCards[0]);
+newCardArray.forEach(generateCard);
+if (newCardArray.length > 0) {
+  generateCard(newCardArray[0]);
   num = 1;
-  current.innerText = `${num}/${arrCards.length}`;
+  current.innerText = `${num}/${newCardArray.length}`;
 }
 
-let currentIndex = 0;
-
 show.addEventListener("click", (e) => {
-  addContainer.classList.toggle("show");
+  toggleShow();
+});
+
+hide.addEventListener("click", (e) => {
+  toggleShow();
 });
 
 addCard.addEventListener("click", (e) => {
-  if (question.value === "" && answer.value === "") {
-    return;
-  }
-  const newArr = {
+  if (question.value === "" && answer.value === "") return;
+
+  const newCard = {
     question: question.value,
     answer: answer.value,
-    id: new Date().valueOf().toString(),
   };
 
-  arrCards.push(newArr);
-
-  generateCard(newArr);
-  saveToStorage();
-
-  addContainer.classList.toggle("show");
-  if (arrCards.length > 0) {
-    generateCard(arrCards[0]);
+  newCardArray.push(newCard);
+  generateCard(newCard);
+  if (newCardArray.length > 0) {
+    generateCard(newCardArray[0]);
   }
+  toggleShow();
+  saveToStorage();
+  num = 1;
+  currentIndex = 0;
+  current.innerText = `${num}/${newCardArray.length}`;
   question.value = "";
   answer.value = "";
-  currentIndex = 0;
-  num = 1;
-  current.innerText = `${currentIndex + 1}/${arrCards.length}`;
 });
 
 next.addEventListener("click", (e) => {
-  if (currentIndex < arrCards.length - 1) {
-    cardsContainer.innerHTML = "";
-
-    currentIndex = (currentIndex + 1) % arrCards.length;
-    generateCard(arrCards[currentIndex]);
-
-    current.innerText = `${num + 1}/${arrCards.length}`;
+  if (currentIndex < newCardArray.length - 1) {
+    currentIndex = (currentIndex + 1) % newCardArray.length;
+    generateCard(newCardArray[currentIndex]);
+    current.innerText = `${num + 1}/${newCardArray.length}`;
     num++;
-  } else return;
+  } else {
+    return;
+  }
 });
 
 prev.addEventListener("click", (e) => {
   if (currentIndex > 0) {
-    cardsContainer.innerHTML = "";
-    currentIndex = (currentIndex - 1) % arrCards.length;
-    generateCard(arrCards[currentIndex]);
-    current.innerText = `${num - 1}/${arrCards.length}`;
+    currentIndex = (currentIndex - 1) % newCardArray.length;
+    generateCard(newCardArray[currentIndex]);
+    current.innerText = `${num - 1}/${newCardArray.length}`;
     num--;
-  } else return;
+  } else {
+    return;
+  }
 });
 
 clear.addEventListener("click", (e) => {
-  arrCards = [];
+  newCardArray = [];
   cardsContainer.innerHTML = "";
-  current.innerText = "";
+  current.innerText = ``;
   saveToStorage();
 });
+
+function toggleShow() {
+  addContainer.classList.toggle("show");
+}
 
 function generateCard(arr) {
   const newCard = document.createElement("div");
   newCard.className = "card";
   newCard.classList.add("active");
-  newCard.dataset.itemId = arr.id;
   newCard.innerHTML = `<div class="inner-card">
-          <div class="inner-card-front ">
+          <div class="inner-card-front">
             <p>
               ${arr.question}
             </p>
@@ -97,15 +100,15 @@ function generateCard(arr) {
             </p>
           </div>
         </div>`;
-  newCard.addEventListener("click", () => {
+  cardsContainer.appendChild(newCard);
+
+  newCard.addEventListener("click", (e) => {
     newCard.classList.toggle("show-answer");
   });
-
-  cardsContainer.appendChild(newCard);
 }
 
 function saveToStorage() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(arrCards));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(newCardArray));
 }
 
 function loadStorage() {
