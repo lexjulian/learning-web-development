@@ -2,68 +2,58 @@ const url = "https://randomuser.me/api/";
 const main = document.querySelector("#main");
 const addUserButton = document.querySelector("#add-user");
 const double = document.querySelector("#double");
-const millions = document.querySelector("#show-millionaires");
+const million = document.querySelector("#show-millionaires");
 const sort = document.querySelector("#sort");
 const calculate = document.querySelector("#calculate-wealth");
 
-async function generateName() {
-  const res = await fetch(url);
-  const data = await res.json();
-  const name = await data.results[0].name;
-  return `${name.first} ${name.last}`;
-}
-
-let users = [];
-addUser(3);
+let userArray = [];
 
 addUserButton.addEventListener("click", (e) => {
   addUser(1);
 });
 
 double.addEventListener("click", (e) => {
-  const newWealth = users.map((user) => {
+  const doubleAmount = userArray.map((user) => {
     return {
       ...user,
       wealth: user.wealth * 2,
     };
   });
-  users = newWealth;
-  renderNames(users);
+  userArray = doubleAmount;
+  loadNames(userArray);
 });
 
-millions.addEventListener("click", (e) => {
-  const millionares = users.filter((user) => user.wealth > 1000000);
-  users = millionares;
-  renderNames(users);
+million.addEventListener("click", (e) => {
+  const millions = userArray.filter((user) => user.wealth > 1000000);
+  userArray = millions;
+  loadNames(userArray);
 });
 
 sort.addEventListener("click", (e) => {
-  const richest = users.sort((a, b) => b.wealth - a.wealth);
-  users = richest;
-  renderNames(users);
+  const richest = userArray.sort((a, b) => b.wealth - a.wealth);
+  userArray = richest;
+  loadNames(userArray);
 });
 
 calculate.addEventListener("click", (e) => {
-  const totalWealth = users
-    .reduce((arr, user) => {
-      arr.push(user.wealth);
+  const total = userArray
+    .reduce((arr, balance) => {
+      arr.push(balance.wealth);
       return arr;
     }, [])
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-  const total = document.createElement("div");
-  total.innerHTML = `<h3>Total Wealth: <strong>${formatCurreny(
-    totalWealth
+  const totalHTML = document.createElement("div");
+  totalHTML.innerHTML = `<h3>Total Wealth: <strong>${formatCurrency(
+    total
   )}</strong></h3>`;
-  main.appendChild(total);
+  main.appendChild(totalHTML);
 });
 
-function formatCurreny(amount) {
-  const formatter = new Intl.NumberFormat("en-us", {
-    style: "currency",
-    currency: "USD",
-  });
-
-  return formatter.format(amount);
+async function generateName() {
+  const res = await fetch(url);
+  const data = await res.json();
+  const name = data.results[0].name;
+  return `${name.first} ${name.last}`;
 }
 
 async function addUser(number) {
@@ -72,19 +62,29 @@ async function addUser(number) {
       name: await generateName(),
       wealth: Math.floor(Math.random() * 1000000),
     };
-    users.push(newUser);
+    userArray.push(newUser);
   }
-  renderNames(users);
+  loadNames(userArray);
 }
 
-function renderNames(names) {
+function formatCurrency(amount) {
+  const formatter = new Intl.NumberFormat("en-us", {
+    style: "currency",
+    currency: "USD",
+  });
+  return formatter.format(amount);
+}
+
+function loadNames(users) {
   main.innerHTML = "";
-  names.forEach((user) => {
-    const newUser = document.createElement("div");
-    newUser.classList.add("person");
-    newUser.innerHTML = `<strong>${user.name}</strong> ${formatCurreny(
+  users.forEach((user) => {
+    const newName = document.createElement("div");
+    newName.classList.add("person");
+    newName.innerHTML = `<strong>${user.name}</strong> ${formatCurrency(
       user.wealth
     )}`;
-    main.appendChild(newUser);
+    main.appendChild(newName);
   });
 }
+
+addUser(3);
