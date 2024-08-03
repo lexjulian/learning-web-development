@@ -1,102 +1,60 @@
+const container = document.querySelector(".container");
+const movie = document.querySelector("#movie");
+const seats = document.querySelectorAll(".row .seat:not(.occupied)");
 const count = document.querySelector("#count");
 const total = document.querySelector("#total");
-const movie = document.querySelector("#movie");
-const seats = document.querySelectorAll(".seat");
-const STORAGE_KEY = "MOVIE_SEAT_BOOKING";
 
-let defaultCountNumber = 0;
-let defaultCurrentPrice = 0;
-let defaultMoviePrice = 0;
-let defaultSeatsIndex = [];
+let ticketPrice = +movie.value;
+populateUi();
 
-let storedData = localStorage.getItem(STORAGE_KEY);
-let data = storedData
-  ? JSON.parse(storedData)
-  : {
-      countNumber: defaultCountNumber,
-      currentPrice: defaultCurrentPrice,
-      moviePrice: defaultMoviePrice,
-      seatsIndex: defaultSeatsIndex,
-    };
-
-let countNumber = data.countNumber;
-let currentPrice = data.currentPrice;
-let moviePrice = data.moviePrice;
-let seatsIndex = data.seatsIndex;
-
-initialize();
-
-document.addEventListener("click", (e) => {
-  if (!e.target.matches(".seat")) return;
-
-  const select = e.target;
-  computeCount(select);
-  saveSeats();
-  saveData();
+container.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("seat") &&
+    !e.target.classList.contains("occupied")
+  ) {
+    e.target.classList.toggle("selected");
+    updateSelectedCount();
+  }
 });
 
-movie.addEventListener("change", (e) => {
-  moviePrice = parseInt(movie.value);
-  const newTotal = moviePrice * countNumber;
-  total.innerText = newTotal;
-  currentPrice = newTotal;
-  saveData();
+movie.addEventListener("click", (e) => {
+  ticketPrice = +e.target.value;
+  setMovieIndex(e.target.selectedIndex, e.target.value);
+  updateSelectedCount();
 });
 
-function computeCount(input) {
-  const isSelected = input.classList.contains("selected");
-  if (isSelected) {
-    count.innerText = countNumber - 1;
-    input.classList.remove("selected");
-    countNumber--;
-    currentPrice = currentPrice - moviePrice;
-    total.innerText = currentPrice;
-  } else {
-    count.innerText = countNumber + 1;
-    input.classList.add("selected");
-    countNumber++;
-    currentPrice = currentPrice + moviePrice;
-    total.innerText = currentPrice;
+function updateSelectedCount() {
+  const selectedSeats = document.querySelectorAll(".row .seat.selected");
+  const seatIndex = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
+
+  localStorage.setItem("selectedSeatIndex", JSON.stringify(seatIndex));
+
+  let numberOfSeats = selectedSeats.length;
+
+  count.innerHTML = numberOfSeats;
+  total.innerHTML = numberOfSeats * ticketPrice;
+}
+
+function setMovieIndex(movieIndex, moviePrice) {
+  localStorage.setItem("selectedMovieIndex", movieIndex);
+  localStorage.setItem("selectedMoviePrice", moviePrice);
+}
+
+function populateUi() {
+  const selectedSeats = JSON.parse(localStorage.getItem("selectedSeatIndex"));
+
+  if (selectedSeats !== null && selectedSeats.length > 0) {
+    seats.forEach((seat, index) => {
+      if (selectedSeats.indexOf(index) > -1) {
+        seat.classList.add("selected");
+      }
+    });
+  }
+
+  const selectedMovieIndex = localStorage.getItem("selectedMovieIndex");
+  if (selectedMovieIndex !== null) {
+    movie.selectedIndex = selectedMovieIndex;
   }
 }
 
-function saveSeats() {
-  const tempSeat = [];
-  seats.forEach((seat, index) => {
-    if (seat.classList.contains("selected")) {
-      tempSeat.push(index);
-    }
-  });
-  return (seatsIndex = tempSeat);
-}
-
-function loadSeats() {
-  seatsIndex.forEach((index) => {
-    if (index >= 0 && index < seats.length) {
-      seats[index].classList.add("selected");
-    }
-  });
-}
-
-function saveToStorage(data) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-}
-
-function saveData() {
-  let data = {
-    countNumber: countNumber,
-    currentPrice: currentPrice,
-    moviePrice: moviePrice,
-    seatsIndex: seatsIndex,
-  };
-  saveToStorage(data);
-}
-
-function initialize() {
-  loadSeats();
-  count.innerText = countNumber;
-  total.innerText = currentPrice;
-  movie.value = movie.value === 0 ? 10 : moviePrice;
-
-  moviePrice = parseInt(movie.value);
-}
+updateSelectedCount();
