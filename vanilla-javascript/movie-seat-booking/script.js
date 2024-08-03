@@ -29,10 +29,9 @@ function updateSelectedCount() {
 
   localStorage.setItem("seatIndex", JSON.stringify(seatIndex));
 
-  let selectedCount = selectedSeats.length;
-
-  count.innerText = selectedCount;
-  total.innerText = selectedCount * ticketPrice;
+  let countNumber = selectedSeats.length;
+  count.innerText = countNumber;
+  total.innerText = countNumber * ticketPrice;
 }
 
 function setMovie(movieIndex, moviePrice) {
