@@ -1,11 +1,11 @@
 const container = document.querySelector(".container");
-const movie = document.querySelector("#movie");
-const seats = document.querySelectorAll(".row .seat:not(.occupied)");
 const count = document.querySelector("#count");
 const total = document.querySelector("#total");
+const movie = document.querySelector("#movie");
+const seats = document.querySelectorAll(".row .seat:not(.occupied)");
 
+populateUI();
 let ticketPrice = +movie.value;
-populateUi();
 
 container.addEventListener("click", (e) => {
   if (
@@ -17,9 +17,9 @@ container.addEventListener("click", (e) => {
   }
 });
 
-movie.addEventListener("click", (e) => {
+movie.addEventListener("change", (e) => {
   ticketPrice = +e.target.value;
-  setMovieIndex(e.target.selectedIndex, e.target.value);
+  setMovie(e.target.selectedIndex, e.target.value);
   updateSelectedCount();
 });
 
@@ -27,22 +27,21 @@ function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll(".row .seat.selected");
   const seatIndex = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
 
-  localStorage.setItem("selectedSeatIndex", JSON.stringify(seatIndex));
+  localStorage.setItem("seatIndex", JSON.stringify(seatIndex));
 
-  let numberOfSeats = selectedSeats.length;
+  let selectedCount = selectedSeats.length;
 
-  count.innerHTML = numberOfSeats;
-  total.innerHTML = numberOfSeats * ticketPrice;
+  count.innerText = selectedCount;
+  total.innerText = selectedCount * ticketPrice;
 }
 
-function setMovieIndex(movieIndex, moviePrice) {
+function setMovie(movieIndex, moviePrice) {
   localStorage.setItem("selectedMovieIndex", movieIndex);
   localStorage.setItem("selectedMoviePrice", moviePrice);
 }
 
-function populateUi() {
-  const selectedSeats = JSON.parse(localStorage.getItem("selectedSeatIndex"));
-
+function populateUI() {
+  const selectedSeats = JSON.parse(localStorage.getItem("seatIndex"));
   if (selectedSeats !== null && selectedSeats.length > 0) {
     seats.forEach((seat, index) => {
       if (selectedSeats.indexOf(index) > -1) {
@@ -51,9 +50,9 @@ function populateUi() {
     });
   }
 
-  const selectedMovieIndex = localStorage.getItem("selectedMovieIndex");
-  if (selectedMovieIndex !== null) {
-    movie.selectedIndex = selectedMovieIndex;
+  const movieIndex = localStorage.getItem("selectedMovieIndex");
+  if (movieIndex !== null) {
+    movie.selectedIndex = movieIndex;
   }
 }
 
