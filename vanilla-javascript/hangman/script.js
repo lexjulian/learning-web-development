@@ -6,7 +6,14 @@ const popup = document.querySelector("#popup-container");
 const finalMessage = document.querySelector("#final-message");
 const play = document.querySelector("#play-button");
 
-const data = ["fire", "database"];
+const data = [
+  "programming",
+  "database",
+  "html",
+  "javascript",
+  "function",
+  "selector",
+];
 let selectedData = data[Math.floor(Math.random() * data.length)];
 let selectedDataSplit = selectedData.split("");
 let correctLetters = [];
@@ -38,16 +45,7 @@ function isCorrect(e) {
     indices.forEach((index) => {
       letterArray[index].innerHTML = e;
     });
-    const newWord = document.querySelectorAll(".letter");
-    let newWordArray = [...newWord]
-      .map((element) => element.innerHTML)
-      .join("");
-    console.log(newWordArray);
-    if (newWordArray === selectedData) {
-      popup.style.display = "flex";
-      finalMessage.innerHTML = "Congratulations! You won! 😃";
-      isPlaying = false;
-    }
+    combineCorrectLetters();
   } else {
     wrongLetters.push(e);
     showWrongLetters(wrongLetters);
@@ -57,6 +55,17 @@ function isCorrect(e) {
       finalMessage.innerHTML = "Unfortunately you lost. 😕";
       isPlaying = false;
     }
+  }
+}
+
+function combineCorrectLetters() {
+  const newWord = document.querySelectorAll(".letter");
+  let newWordArray = [...newWord].map((element) => element.innerHTML).join("");
+  console.log(newWordArray);
+  if (newWordArray === selectedData) {
+    popup.style.display = "flex";
+    finalMessage.innerHTML = "Congratulations! You won! 😃";
+    isPlaying = false;
   }
 }
 
