@@ -11,9 +11,9 @@ const progressContainer = document.querySelector("#progress-container");
 const songs = ["hey", "summer", "ukulele"];
 let songIndex = 2;
 
-playingSong(2);
+isPlaying(2);
 
-function playingSong(songIndex) {
+function isPlaying(songIndex) {
   audio.src = `music/${songs[songIndex]}.mp3`;
 }
 
@@ -21,11 +21,9 @@ function toggleVideoStatus() {
   if (audio.paused) {
     showMusicContainer(audio.paused);
     audio.play();
-    play.innerHTML = `<i class="fas fa-pause"></i>`;
   } else {
     showMusicContainer(audio.paused);
     audio.pause();
-    play.innerHTML = `<i class="fas fa-play"></i>`;
   }
 }
 
@@ -61,8 +59,8 @@ function prevSong() {
 }
 
 function playSong() {
+  isPlaying(songIndex);
   changeCover();
-  playingSong(songIndex);
   showMusicContainer(true);
   audio.play();
 }
@@ -76,9 +74,9 @@ function progressBar() {
 }
 
 function setProgressBar(e) {
-  const progressContainerWidth = progressContainer.clientWidth;
+  const progressBarWidth = progressContainer.clientWidth;
   const clickX = e.offsetX;
-  const progressPercent = (clickX / progressContainerWidth) * 100;
+  const progressPercent = (clickX / progressBarWidth) * 100;
   audio.currentTime = (progressPercent / 100) * audio.duration;
 }
 
