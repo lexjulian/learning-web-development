@@ -9,7 +9,7 @@ const difficulty = document.querySelector("#difficulty");
 
 let randomWord = "";
 let score = 0;
-let sec = 10;
+let time = 10;
 let setDifficulty = "easy";
 
 const words = [
@@ -36,7 +36,7 @@ const words = [
 ];
 
 function populateWord() {
-  let random = words[Math.floor(Math.random() * words.length)];
+  const random = words[Math.floor(Math.random() * words.length)];
   word.innerText = random;
   randomWord = random;
 }
@@ -46,43 +46,41 @@ function addScore() {
   scoreEl.innerText = score;
 }
 
-function time() {
+function setTime() {
   const timer = setInterval(() => {
-    if (sec <= 0) {
+    if (time <= 0) {
       clearInterval(timer);
       timeOut();
     }
-    timeEl.innerHTML = `${sec}s`;
-    sec -= 1;
+    timeEl.innerHTML = `${time}s`;
+    time--;
   }, 1000);
 }
 
 function timeOut() {
-  endGame.style.display = "flex";
   endGame.innerHTML = `<h1>Time ran out</h1>
     <p>Your final score is ${score}</p>
     <button onclick="location.reload()">Reload</button>`;
+  endGame.style.display = "flex";
 }
 
 text.addEventListener("input", () => {
   if (text.value === randomWord) {
-    text.value = "";
     addScore();
     populateWord();
+    text.value = "";
     if (setDifficulty === "easy") {
-      sec += 5;
+      time += 5;
     } else if (setDifficulty === "medium") {
-      sec += 3;
+      time += 3;
     } else {
-      sec += 1;
+      time += 1;
     }
   }
 });
 
 settingsBtn.addEventListener("click", () => settings.classList.toggle("hide"));
-difficulty.addEventListener("change", () => {
-  setDifficulty = difficulty.value;
-});
+difficulty.addEventListener("change", () => (setDifficulty = difficulty.value));
 
 populateWord();
-time();
+setTime();
